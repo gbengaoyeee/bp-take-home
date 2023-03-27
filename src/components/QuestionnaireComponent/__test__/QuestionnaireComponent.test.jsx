@@ -128,7 +128,7 @@ describe('QuestionnaireComponent', () => {
         expect(question1Title).toBeInTheDocument()
     })
 
-    it('should be able to go back to previous question if input is entered', async () => {
+    it('should be able to go back to previous question', async () => {
         const questions = [
             {
                 id: 'full-name',
