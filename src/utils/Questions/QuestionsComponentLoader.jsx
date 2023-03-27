@@ -1,6 +1,12 @@
 import { CheckBoxInput, DatePicker, FileUploadInput, RadioGroup, SelectInput, TextInput } from "../../components"
 import { SupportedInputs } from "./SupportedInputs"
 
+/**
+ * 
+ * @param {Object[]} questions 
+ * @param {function} updateValue 
+ * @returns an array of JSX elements
+ */
 export const QuestionsComponentLoader = (questions, updateValue) => {
     let components = []
     questions.forEach((question, index) => {

@@ -30,12 +30,10 @@ export const useQuestionnaire = (questions, updateValue) => {
                 }
             }
         })
-        console.log(body)
         return body
     }
 
     const submit = () => {
-        console.log('submitting')
         const submitBody = getSubmitBody()
         setIsSubmitting(true)
         fetch(`${import.meta.env.VITE_SUBMIT_URL}`, {
