@@ -95,7 +95,6 @@ describe('QuestionnaireComponent', () => {
         await userEvent.click(nextButton)
 
         const question1Title = screen.queryByText(new RegExp(questions[0].title, 'i'));
-        screen.debug()
         expect(question1Title).toBeInTheDocument()
     })
 
@@ -190,5 +189,53 @@ describe('QuestionnaireComponent', () => {
         let submitText = screen.queryByText(/You have submitted/i)
         expect(checkmark).toBeInTheDocument()
         expect(submitText).toBeInTheDocument()
+    })
+
+    it('should display error message when a required input has not input', async () => {
+        const questions = [
+            {
+                id: 'full-name',
+                title: 'What is your full name?',
+                tag: 'input',
+                type: 'text',
+                required: true,
+                pattern: "^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$",
+                value: ''
+            }
+        ]
+
+        render(<QuestionnaireComponent questions={questions} />)
+        const submitButton = screen.getByRole('button', {name: 'Submit'})
+        expect(submitButton).toBeInTheDocument()
+
+        // simulate submit click
+        await userEvent.click(submitButton)
+
+        let errorMessage = screen.queryByText(/please fill out this field/i)
+        expect(errorMessage).toBeInTheDocument()
+    })
+    it('should display error message when a invalid input is entered', async () => {
+        const questions = [
+            {
+                id: 'email',
+                title: 'What is your email?',
+                tag: 'input',
+                type: 'email',
+                required: true,
+                pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$",
+                message: 'Please enter a valid email',
+                value: 'a'
+            }
+        ]
+
+        render(<QuestionnaireComponent questions={questions} />)
+        const submitButton = screen.getByRole('button', {name: 'Submit'})
+        expect(submitButton).toBeInTheDocument()
+
+        // simulate submit click
+        await userEvent.click(submitButton)
+
+        let errorMessage = screen.queryByText(questions[0].message)
+        expect(errorMessage).toBeInTheDocument()
     })
 })
