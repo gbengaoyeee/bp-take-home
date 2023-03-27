@@ -2,7 +2,7 @@
 # Border Pass Take Home Challenge
 
 ## Running this project
-- first do ```npm install --force```. There is a force flag there because there an issue with material UI styles package which wont install until the flag is present
+- first do ```npm install --force```. There is a force flag because there an issue with material UI styles package which wont install until the flag is present
 - Then do ```npm run dev```
 
 
