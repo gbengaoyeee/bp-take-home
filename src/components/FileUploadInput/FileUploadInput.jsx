@@ -10,7 +10,8 @@ const FileUploadInput = ({question, onChange}) => {
                 {question.title}
                 <input 
                     required={question.required}
-                    type={question.type} 
+                    type={question.type}
+                    accept={question.accept}
                     onChange={(event) => onChange(event.target.files[0])} 
                     style={{
                         opacity: 0,

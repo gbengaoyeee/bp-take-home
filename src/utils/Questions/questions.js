@@ -86,6 +86,7 @@ const questionsList = [
         title: 'Upload your passport photo',
         tag: 'file',
         type: 'file',
+        accept: '.pdf,.jpg,.jpeg,.png'
     },
 ]
 

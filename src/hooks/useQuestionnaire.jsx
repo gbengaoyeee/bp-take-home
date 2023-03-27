@@ -71,7 +71,7 @@ export const useQuestionnaire = (questions, updateValue) => {
         }
     }
     return {
-        currentQuestion: questionInputs[currentIndex] ? questionInputs[currentIndex] : undefined,
+        currentQuestion: questionInputs[currentIndex] ? questionInputs[7] : undefined,
         currentIndex,
         previous,
         next,
