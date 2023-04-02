@@ -2,7 +2,7 @@ import { CheckBoxInput, DatePicker, FileUploadInput, RadioGroup, SelectInput, Te
 import { SupportedInputs } from "./SupportedInputs"
 
 /**
- * 
+ * A Factory function that returns an array of components based on the questions it received
  * @param {Object[]} questions 
  * @param {function} updateValue 
  * @returns an array of JSX elements
