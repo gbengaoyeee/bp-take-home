@@ -4,6 +4,7 @@
 ## Running this project
 - first do ```npm install --force```. There is a force flag because there an issue with material UI styles package which wont install until the flag is present
 - Then do ```npm run dev```
+- Run tests by doing ```npm run test```
 
 
 ### Note: this project is built using [Vite](https://vitejs.dev/) 
