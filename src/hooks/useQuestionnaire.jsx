@@ -11,7 +11,7 @@ export const useQuestionnaire = (questions, updateValue) => {
 
     useEffect(() => {
       const calculatePercentage = () => {
-        let percentage = Number((currentIndex / questionInputs.length).toFixed(2)) * 100
+        let percentage = Math.round((currentIndex / questionInputs.length) * 100)
         setProgressPercentage(percentage)
       }
 

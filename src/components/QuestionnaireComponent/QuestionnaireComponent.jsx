@@ -31,7 +31,7 @@ const QuestionnaireComponent = ({questions, updateValue}) => {
     const handleNextOrSubmit = (e) => {
         setValidationMessage(null)
         const question = questions[currentIndex]
-        if(question.required && !question.value.length) {
+        if(question.required && (!question.value && !question.value.length)) {
             setValidationMessage('Please fill out this field')
             return
         }

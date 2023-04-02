@@ -44,6 +44,7 @@ const questionsList = [
         type: 'date',
         max: `${formatDate(-18)}`,
         required: true,
+        message: 'Please choose your date of birth',
         value: ''
     },
     {
@@ -53,6 +54,16 @@ const questionsList = [
         type: 'radio',
         options: ['male', 'female', 'other'],
         required: true,
+        value: ''
+    },
+    {
+        id: 'visa-status',
+        title: 'What kind of visa are you looking to obtain?',
+        tag: 'radio',
+        type: 'radio',
+        options: ['student', 'work', 'visitor', 'other'],
+        required: true,
+        message: 'Please select one of the options',
         value: ''
     },
     {
@@ -69,6 +80,7 @@ const questionsList = [
         tag: 'select',
         type: 'select',
         required: true,
+        message: 'Please select your country of citizenship',
         options: [
             {label:'Select your country of citizenship', value:''}, 
             {label: 'Algeria', value: 'Algeria'}, 
@@ -82,11 +94,30 @@ const questionsList = [
         value: ''
     },
     {
+        id: 'dob',
+        title: 'When do you plan to come to Canada?',
+        tag: 'date',
+        type: 'date',
+        min: `${formatDate(0)}`,
+        value: ''
+    },
+    {
         id: 'passport-photo',
         title: 'Upload your passport photo',
         tag: 'file',
         type: 'file',
-        accept: '.pdf,.jpg,.jpeg,.png'
+        required: true,
+        message: 'Please upload a copy of your passport photo',
+        accept: '.pdf,.jpg,.jpeg,.png',
+        value:''
+    },
+    {
+        id: 'proof-of-funds',
+        title: 'Upload a proof of funds(if you have one). Usually a bank statement',
+        tag: 'file',
+        type: 'file',
+        accept: '.pdf,.jpg,.jpeg,.png',
+        value:''
     },
 ]
 
