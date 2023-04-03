@@ -20,14 +20,13 @@ export const useQuestionnaire = (questions, updateValue) => {
     }, [currentIndex] )
     
 
+    // constructs the body of the post request
     const getSubmitBody = () => {
-        let body = {}
+        let body = new FormData()
 
         questions.forEach((question) => {
             if((question.value)) {
-                if(question.value.length > 0) {
-                    body[question.id] = question.value
-                }
+                body.append(question.id, question.value)
             }
         })
         return body
@@ -38,11 +37,7 @@ export const useQuestionnaire = (questions, updateValue) => {
         setIsSubmitting(true)
         fetch(`${import.meta.env.VITE_SUBMIT_URL}`, {
             method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(submitBody)
+            body: submitBody
         })
         .then((res) => {
             if (res.status === 200) {

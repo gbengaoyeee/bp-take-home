@@ -24,7 +24,7 @@ const QuestionnaireComponent = ({questions, updateValue}) => {
     const classes = useStyles()
 
     /**
-     * 
+     * Handles the setting of validation error messages and going to the next question
      * @param {Event} e 
      * @returns 
      */
