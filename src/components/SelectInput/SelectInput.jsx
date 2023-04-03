@@ -6,7 +6,7 @@ const SelectInput = ({question, onChange}) => {
     return (
         <QuestionComponent {...question} >
         <FormControl sx={{ m: 1, minWidth: 180 }} size='medium'>
-            <InputLabel>Country</InputLabel>
+            <InputLabel>{question.title}</InputLabel>
             <Select
                 labelId="demo-simple-select-autowidth-label"
                 id="demo-simple-select-autowidth"

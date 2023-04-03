@@ -67,6 +67,22 @@ const questionsList = [
         value: ''
     },
     {
+        id: 'education-level',
+        title: 'What is your highest level of education',
+        tag: 'select',
+        type: 'select',
+        required: true,
+        message: 'Please select your highest level of education',
+        options: [
+            {label:'Highest level of education', value:''}, 
+            {label: 'Bachelors Degree', value: 'Bachelors Degree'}, 
+            {label:'Associate Degree', value: 'Associate Degree'}, 
+            {label:'Some College', value: 'Some College'}, 
+            {label:'High School', value:'High School'},
+        ],
+        value: ''
+    },
+    {
         id: 'disability',
         title: 'Select one or more disabilities? (Select all that applies)',
         tag: 'checked',
